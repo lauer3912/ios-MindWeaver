@@ -78,14 +78,10 @@ class ScreenshotTests: XCTestCase {
         let directory = (fullPath as NSString).deletingLastPathComponent
         try? fileManager.createDirectory(atPath: directory, withIntermediateDirectories: true)
         
-        // Take screenshot and get PNG data
+        // Take screenshot and get PNG data using UIImage standard method
         let screenshot = XCUIScreen.main.screenshot()
         let image = screenshot.image
-        
-        // Save as PNG using CGImage destination
-        guard let cgImage = image.cgImage else { return }
-        let bitmapRep = NSBitmapImageRep(cgImage: cgImage)
-        guard let pngData = bitmapRep.representation(using: .png, properties: [:]) else { return }
+        guard let pngData = image.pngData() else { return }
         try? pngData.write(to: URL(fileURLWithPath: fullPath))
         
         // Small delay to ensure next tab transition is visible
