@@ -104,19 +104,19 @@ MindWeaver is an AI-powered mind exploration app that predicts your thoughts and
 36. Dream mood indicators
 37. Share dream stories
 
-### 4.思维陷阱 (Thought Traps) (10 features)
+### 4. Thought Traps (10 features)
 38. Logic puzzles generation
 39. Brain teaser challenges
 40. Mind trap detection tips
 41. Paradox thinking exercises
 42. Cognitive bias awareness
 43. "Think Different" daily challenges
-44. Contrarian观点训练
+44. Contrarian Thinking Training
 45. Decision making scenarios
 46. Moral dilemma discussions
 47. Creative thinking exercises
 
-### 5. 积分系统 & 成就 (12 features)
+### 5. Points & Achievements (12 features)
 48. Points earned per action
 49. Daily login bonus
 50. Streak rewards
@@ -130,19 +130,19 @@ MindWeaver is an AI-powered mind exploration app that predicts your thoughts and
 58. Special event points
 59. Referral bonus points
 
-### 6. 个人中心 (Profile) (13 features)
-60. User profile management
-61. Statistics dashboard
-62. Prediction history export
-73. Account settings
-74. Notification preferences
-75. Privacy controls
-76. Appearance settings (dark mode default)
-77. Data management
-78. Help & FAQ
-79. Contact support
-80. About / Legal
-81. Sign out option
+### 6. Profile & Settings (13 features)
+60. Profile Management
+61. Statistics Dashboard
+62. Prediction History Export
+63. Account Settings
+64. Notification Preferences
+65. Privacy Controls
+66. Appearance (Dark mode default, font size)
+67. Data Management
+68. Help & FAQ
+69. Contact Support
+70. About / Legal
+71. Sign Out
 
 ---
 
