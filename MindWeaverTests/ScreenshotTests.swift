@@ -18,7 +18,6 @@ class ScreenshotTests: XCTestCase {
     // MARK: - iPhone 6.9" Screenshots (1320x2868)
     
     func test_iPhone69_HomeScreen() {
-        // Already on Home by default
         captureScreenshot(name: "01_Home", path: "iPhone_69_1320x2868")
     }
     
@@ -79,14 +78,15 @@ class ScreenshotTests: XCTestCase {
         let directory = (fullPath as NSString).deletingLastPathComponent
         try? fileManager.createDirectory(atPath: directory, withIntermediateDirectories: true)
         
-        // Take screenshot
+        // Take screenshot and get PNG data
         let screenshot = XCUIScreen.main.screenshot()
         let image = screenshot.image
         
-        // Save as PNG
-        if let pngData = image.pngRepresentation() {
-            try? pngData.write(to: URL(fileURLWithPath: fullPath))
-        }
+        // Save as PNG using CGImage destination
+        guard let cgImage = image.cgImage else { return }
+        let bitmapRep = NSBitmapImageRep(cgImage: cgImage)
+        guard let pngData = bitmapRep.representation(using: .png, properties: [:]) else { return }
+        try? pngData.write(to: URL(fileURLWithPath: fullPath))
         
         // Small delay to ensure next tab transition is visible
         Thread.sleep(forTimeInterval: 0.5)
