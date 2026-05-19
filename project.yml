@@ -68,6 +68,22 @@ targets:
         UIUserInterfaceStyle: Dark
     dependencies: []
 
+  MindWeaverTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: MindWeaverTests
+        excludes:
+          - "**/.DS_Store"
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.ggsheng.MindWeaverTests
+        GENERATE_INFOPLIST_FILE: true
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/MindWeaver.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MindWeaver"
+        BUNDLE_LOADER: "$(TEST_HOST)"
+    dependencies:
+      - target: MindWeaver
+
 schemes:
   MindWeaver:
     build:
@@ -77,6 +93,8 @@ schemes:
       config: Debug
     test:
       config: Debug
+      targets:
+        - MindWeaverTests
     profile:
       config: Release
     analyze:
